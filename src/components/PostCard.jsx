@@ -1,36 +1,3 @@
-// export default function PostCard({ post, onLike }) {
-//    // Use CRA environment variable
-//    const API_URL = process.env.REACT_APP_API_URL?.replace("/api", "") || "http://localhost:5000";
-
-//    return (
-//       <div style={{ border: "1px solid #eee", padding: 12, marginBottom: 8 }}>
-//          <div style={{ fontWeight: 600 }}>{post.author?.username || "User"}</div>
-//          <div>{post.content}</div>
-//          {post.image && (
-//             <img
-//                src={
-//                   post.image.startsWith("http")
-//                      ? post.image
-//                      : API_URL + "/uploads/" + post.image
-//                }
-//                alt="post"
-//                style={{ maxWidth: 300, marginTop: 8 }}
-//             />
-//          )}
-
-
-//          <div style={{ marginTop: 8 }}>
-//             <button onClick={() => onLike(post._id)}>
-//                Like ({post.likes?.length || 0})
-//             </button>
-//          </div>
-//       </div>
-//    );
-// }
-
-
-
-
 import "./PostCard.css";
 
 export default function PostCard({ post, onLike }) {
