@@ -1,0 +1,230 @@
+/* ----------- Layout ----------- */
+.chat-container {
+   display: flex;
+   height: 90vh;
+   width: 100%;
+   border: 1px solid #ddd;
+   overflow: hidden;
+   font-family: Arial, sans-serif;
+   background: #fff;
+}
+
+/* ----------- Sidebar (Conversations) ----------- */
+.chat-sidebar {
+   width: 400px;
+   border-right: 1px solid #eee;
+   display: flex;
+   flex-direction: column;
+}
+
+.chat-sidebar h3 {
+   text-align: center;
+   margin-top: 10px;
+}
+
+.chat-sidebar-header {
+   padding: 16px;
+   font-weight: bold;
+   border-bottom: 1px solid #eee;
+}
+
+.chat-sidebar input {
+   margin: 8px;
+   padding: 8px;
+   border: 1px solid #ddd;
+   border-radius: 6px;
+   width: calc(100% - 16px);
+   outline: none;
+}
+
+.sidebar-search-btn {
+   margin: 8px;
+   padding: 8px;
+   border: none;
+   border-radius: 6px;
+}
+.sidebar-search-btn:hover{
+   background: #f9f9f9;
+}
+
+.sidebar-results {
+   /* border: 1px solid red; */
+   margin: 8px;
+
+}
+
+.sidebar-user {
+   /* border: 1px solid red; */
+   margin-bottom: 5px;
+   border: 1px solid #ddd;
+   border-radius: 6px;
+   text-align: start;
+   padding: 8px 5px !important;
+
+}
+
+.sidebar-user:hover{
+   background: #f9f9f9;
+
+}
+
+.sidebar-convs {
+   /* border: 1px solid red; */
+   margin: 8px;
+}
+
+.sidebar-conv {
+   margin-bottom: 5px;
+   border: 1px solid #ddd;
+   border-radius: 6px;
+   text-align: start;
+   padding: 8px 5px !important;
+}
+
+.sidebar-conv:hover {
+   background: #f9f9f9;
+
+}
+
+.chat-conversations {
+   flex: 1 !important;
+   overflow-y: auto;
+   padding-left: 20px;
+
+}
+
+.chat-conv {
+
+   padding: 12px;
+   cursor: pointer;
+   border-bottom: 1px solid #f5f5f5;
+   transition: background 0.2s;
+
+}
+
+.chat-conv:hover {
+   background: #f9f9f9;
+}
+
+.chat-conv.active {
+   background: #efefef;
+   font-weight: bold;
+}
+
+/* ----------- Chat Window ----------- */
+.chat-window {
+   flex: 1;
+   display: flex;
+   flex-direction: column;
+   /* border: 1px solid red; */
+   background: #EEAECA;
+   background: radial-gradient(circle, rgba(238, 174, 202, 1) 0%, rgba(148, 187, 233, 1) 100%);
+   ;
+   overflow: hidden;
+}
+
+.chat-empty {
+   margin-top: 250px;
+   text-align: center;
+}
+
+
+.chat-header {
+   padding: 12px 16px;
+   /* border-bottom: 1px solid #eee; */
+   background: #EEAECA;
+   background: radial-gradient(circle, rgba(238, 174, 202, 1) 0%, rgba(148, 187, 233, 1) 100%);
+   font-weight: bold;
+   /* background: #fafafa; */
+}
+
+.chat-messages {
+   flex: 1;
+   padding: 16px;
+   overflow-y: auto;
+   background: #fafafa;
+   background: #EEAECA;
+   background: radial-gradient(circle, rgba(238, 174, 202, 1) 0%, rgba(148, 187, 233, 1) 100%);
+   display: flex;
+   flex-direction: column;
+   gap: 10px;
+   -ms-overflow-style: none;
+   /* IE, Edge */
+   scrollbar-width: none;
+   /* Firefox */
+}
+
+
+.chat-messages::-webkit-scrollbar {
+   display: none;
+   /* Chrome, Safari, Opera */
+}
+
+/* Message Bubbles */
+.chat-message {
+   max-width: 60%;
+   padding: 10px 14px;
+   border-radius: 18px;
+   font-size: 14px;
+   line-height: 1.4;
+   word-wrap: break-word;
+}
+
+/* Dusre ka message (left) */
+.chat-message.other {
+   background: #e5e5e5;
+   color: #000;
+   align-self: flex-start;
+   border-radius: 18px 18px 18px 4px;
+}
+
+/* Apna message (right) */
+.chat-message.me {
+   /* background: #0095f6; */
+   background: darkgreen;
+   color: #fff;
+   align-self: flex-end;
+   border-radius: 18px 18px 4px 18px;
+}
+
+/* Time under message */
+.chat-time {
+   font-size: 11px;
+   color: #999;
+   margin-top: 2px;
+   text-align: right;
+}
+
+/* ----------- Input box ----------- */
+.chat-input {
+   border-top: 1px solid #eee;
+   display: flex;
+   padding: 8px 12px;
+   gap: 8px;
+   background: #fff;
+   background: #EEAECA;
+   background: radial-gradient(circle, rgba(238, 174, 202, 1) 0%, rgba(148, 187, 233, 1) 100%);
+}
+
+.chat-input input {
+   flex: 1;
+   padding: 10px;
+   border: 1px solid #ddd;
+   border-radius: 20px;
+   outline: none !important;
+}
+
+.chat-input button {
+   border: none;
+   background: #0095f6;
+   color: white;
+   padding: 0 16px;
+   border-radius: 20px;
+   cursor: pointer;
+   font-weight: bold;
+}
+
+.chat-input button:disabled {
+   background: #b2dffc;
+   cursor: not-allowed;
+}

@@ -1,0 +1,56 @@
+.profile-page {
+   max-width: 900px;
+   margin: 20px auto;
+   padding: 0 16px;
+   font-family: Arial, sans-serif;
+}
+
+/* Profile header */
+.profile-header {
+   display: flex;
+   align-items: center;
+   gap: 30px;
+   padding-bottom: 20px;
+   border-bottom: 1px solid #ddd;
+}
+
+.profile-avatar {
+   width: 140px;
+   height: 140px;
+   border-radius: 50%;
+   object-fit: cover;
+}
+
+.profile-info h2 {
+   margin: 0 0 10px 0;
+}
+
+.profile-info p {
+   margin: 0 0 10px 0;
+   color: #555;
+}
+
+.profile-stats {
+   display: flex;
+   gap: 20px;
+   font-size: 14px;
+}
+
+/* Posts Grid */
+.profile-posts {
+   display: grid;
+   grid-template-columns: repeat(3, 1fr);
+   gap: 10px;
+   margin-top: 20px;
+}
+
+.post-item {
+   /* PostCard ko grid cell me wrap karne ke liye */
+   width: 100%;
+}
+
+.no-posts {
+   text-align: center;
+   margin-top: 30px;
+   color: #666;
+}

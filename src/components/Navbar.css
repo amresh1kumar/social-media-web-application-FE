@@ -1,0 +1,90 @@
+/* Navbar container */
+.navbar {
+   display: flex;
+   align-items: center;
+   justify-content: space-between;
+   background: #222;
+   /* dark background */
+   padding: 0 20px;
+   height: 60px;
+   font-family: Arial, sans-serif;
+   position: sticky;
+   top: 0;
+   z-index: 1000;
+}
+
+/* Logo */
+.logo {
+   font-size: 20px;
+   font-weight: bold;
+   background: #ffd500;
+   /* yellow box */
+   color: #000;
+   padding: 8px 15px;
+   border-radius: 4px;
+}
+
+/* Nav links */
+.nav-links {
+   list-style: none;
+   display: flex;
+   justify-content: center;
+   gap: 10px;
+   margin: 0;
+   padding: 0;
+}
+
+.nav-item {
+   color: #fff;
+   text-decoration: none;
+   padding: 6px 12px;
+   border-radius: 20px;
+   transition: 0.3s;
+   position: relative;
+   top: 5px;
+   /* border: 1px solid red; */
+}
+
+.nav-item-log-out {
+   color: #fff;
+   text-decoration: none;
+   padding: 6px 12px;
+   border-radius: 20px;
+   transition: 0.3s;
+
+}
+
+.nav-item-log-out {
+   background: #ffd500;
+   color: #000;
+}
+
+.nav-item:hover {
+   background: #ffd500;
+   color: #000;
+}
+
+/* Auth section */
+.auth-section {
+   display: flex;
+   align-items: center;
+   gap: 10px;
+}
+
+.username {
+   color: #fff;
+}
+
+.logout-btn {
+   background: #ffd500;
+   border: none;
+   padding: 6px 12px;
+   border-radius: 20px;
+   cursor: pointer;
+   font-weight: bold;
+   transition: 0.3s;
+}
+
+.logout-btn:hover {
+   background: #ffcc00;
+}
