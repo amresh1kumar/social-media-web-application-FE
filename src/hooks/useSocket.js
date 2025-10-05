@@ -51,15 +51,18 @@ export default function useSocket() {
 
    useEffect(() => {
       if (!user) return;
-
       const url = process.env.REACT_APP_WS_URL || "http://localhost:5000";
+      socketRef.current = io(url, { transports: ["websocket", "polling"], reconnection: true });
 
-      socketRef.current = io(url, {
-         transports: ["websocket", "polling"], // ✅ polling fallback
-         secure: true,                        // ✅ wss
-         reconnection: true,
-         forceNew: true
-      });
+
+      // const url = process.env.REACT_APP_WS_URL || "http://localhost:5000";
+
+      // socketRef.current = io(url, {
+      //    transports: ["websocket", "polling"], // ✅ polling fallback
+      //    secure: true,                        // ✅ wss
+      //    reconnection: true,
+      //    forceNew: true
+      // });
 
       socketRef.current.on("connect", () => console.log("Socket connected:", socketRef.current.id));
       socketRef.current.on("connect_error", (err) => console.log("Socket error:", err));

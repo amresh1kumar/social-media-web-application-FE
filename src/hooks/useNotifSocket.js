@@ -32,15 +32,8 @@ export default function useNotifSocket() {
 
    useEffect(() => {
       if (!user) return;
-
       const url = process.env.REACT_APP_WS_URL || "http://localhost:5000";
-
-      socketRef.current = io(url, {
-         transports: ["websocket", "polling"], // fallback
-         secure: true,                        // wss for HTTPS
-         reconnection: true,
-         forceNew: true
-      });
+      socketRef.current = io(url, { transports: ["websocket", "polling"], reconnection: true });
 
       // join notifications room
       socketRef.current.emit("joinNotifications", { userId: user._id });

@@ -1,5 +1,39 @@
+// // src/context/AuthContext.jsx
+// import React, { createContext, useContext, useState } from "react";
+
+// const AuthContext = createContext();
+
+// export function useAuth() {
+//    return useContext(AuthContext);
+// }
+
+// export function AuthProvider({ children }) {
+//    const [user, setUser] = useState(() => {
+//       const saved = localStorage.getItem("user");
+//       return saved ? JSON.parse(saved) : null;
+//    });
+
+//    const login = (userData, token) => {
+//       localStorage.setItem("user", JSON.stringify(userData));
+//       localStorage.setItem("token", token);
+//       setUser(userData);
+//    };
+
+//    const logout = () => {
+//       localStorage.removeItem("user");
+//       localStorage.removeItem("token");
+//       setUser(null);
+//    };
+
+//    return (
+//       <AuthContext.Provider value={{ user, login, logout }}>
+//          {children}
+//       </AuthContext.Provider>
+//    );
+// }
+
 // src/context/AuthContext.jsx
-import React, { createContext, useContext, useState } from "react";
+import React, { createContext, useContext, useState, useEffect } from "react";
 
 const AuthContext = createContext();
 
@@ -12,6 +46,19 @@ export function AuthProvider({ children }) {
       const saved = localStorage.getItem("user");
       return saved ? JSON.parse(saved) : null;
    });
+
+   // Sync user across tabs
+   useEffect(() => {
+      const handleStorageChange = (event) => {
+         if (event.key === "user") {
+            const newUser = event.newValue ? JSON.parse(event.newValue) : null;
+            setUser(newUser);
+         }
+      };
+
+      window.addEventListener("storage", handleStorageChange);
+      return () => window.removeEventListener("storage", handleStorageChange);
+   }, []);
 
    const login = (userData, token) => {
       localStorage.setItem("user", JSON.stringify(userData));
