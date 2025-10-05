@@ -1,50 +1,8 @@
-// import { useState } from "react";
-// import { useNavigate, Link } from "react-router-dom";
-// import API from "../API/api";
-// import { useAuth } from "../Context/AuthContext";
-
-// export default function Login() {
-//    const [email, setEmail] = useState("");
-//    const [password, setPassword] = useState("");
-//    const { login } = useAuth();
-//    const navigate = useNavigate();
-
-//    const onSubmit = async (e) => {
-//       e.preventDefault();
-//       try {
-//          const res = await API.post("/auth/login", { email, password });
-//          login(res.data.user, res.data.token);
-//          navigate("/feed");
-//       } catch {
-//          alert("Login failed");
-//       }
-//    };
-
-//    return (
-//       <div style={{ padding: 20 }}>
-//          <h2>Login</h2>
-//          <form onSubmit={onSubmit} style={{ display: "flex", flexDirection: "column", maxWidth: 320 }}>
-//             <input placeholder="email" value={email} onChange={(e) => setEmail(e.target.value)} />
-//             <input
-//                placeholder="password"
-//                type="password"
-//                value={password}
-//                onChange={(e) => setPassword(e.target.value)}
-//             />
-//             <button type="submit">Login</button>
-//          </form>
-//          <p>
-//             Don’t have an account? <Link to="/register">Register</Link>
-//          </p>
-//       </div>
-//    );
-// }
-
 import { useState } from "react";
 import { useNavigate, Link } from "react-router-dom";
 import API from "../API/api";
 import { useAuth } from "../Context/AuthContext";
-import "./Login.css"; // 👈 import CSS
+import "./Login.css"; 
 
 export default function Login() {
    const [email, setEmail] = useState("");
