@@ -196,7 +196,7 @@ export default function Feed() {
    };
 
    return (
-      <div style={{ padding: 20 }}>
+      <div style={{ padding: 20}}>
          <div style={{ textAlign: 'center', position: "sticky", top: 55, zIndex: 10, background: "white" }}>
             <h2 style={{ display: 'inline-block', color: "tomato" }}>
                Your Feed
@@ -206,6 +206,7 @@ export default function Feed() {
          <CreatePost onCreated={onCreated} />
 
          <InfiniteScroll
+                     style={{border:'1px solid red' }}
             dataLength={posts.length}
             next={fetchMore}
             hasMore={hasMore}
@@ -225,11 +226,15 @@ export default function Feed() {
             {posts
                .filter((p) => p.user !== null && p._id) // ✅ skip posts without user or _id
                .map((p) => (
+                     
+                  <div style={{border:'4px solid red' }}  >
+
                   <PostCard
                      key={p._id} // ✅ always unique key
                      post={p}
                      onLike={onLike}
                   />
+                  </div>
                ))}
          </InfiniteScroll>
       </div>
