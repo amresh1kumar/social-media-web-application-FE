@@ -108,7 +108,7 @@ npm start
 
 Access the application: Open http://localhost:3000 in a web browser.
 
-if you get problem from backend size then just comment the code in app.js that is
+if you get problem from backend side then just comment the code in app.js that is
           <Route
             path="/feed"
             element={
