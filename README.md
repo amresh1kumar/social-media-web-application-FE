@@ -108,6 +108,17 @@ npm start
 
 Access the application: Open http://localhost:3000 in a web browser.
 
+if you get problem from backend size then just comment the code in app.js that is
+          <Route
+            path="/feed"
+            element={
+              // <PrivateRoute>
+                <Feed />
+              // </PrivateRoute>
+            }
+          />
+          
+from every from then you can see the GUI of every components
 
 #this is last step from down
 
