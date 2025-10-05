@@ -1,28 +1,3 @@
-// import { Link } from "react-router-dom";
-// import { useAuth } from "../Context/AuthContext";
-
-// export default function Navbar() {
-//    const { user, logout } = useAuth();
-
-//    return (
-//       <nav style={{ display: "flex", gap: 12, padding: 12, borderBottom: "1px solid #eee" }}>
-//          <Link to="/feed">Feed</Link>
-//          <Link to="/chat">Chat</Link>
-//          <Link to="/profile">Profile</Link>
-//          <div style={{ marginLeft: "auto" }}>
-//             {user ? (
-//                <>
-//                   <span style={{ marginRight: 8 }}>{user.username}</span>
-//                   <button onClick={logout}>Logout</button>
-//                </>
-//             ) : (
-//                <Link to="/login">Login</Link>
-//             )}
-//          </div>
-//       </nav>
-//    );
-// }
-
 import { Link } from "react-router-dom";
 import { useAuth } from "../Context/AuthContext";
 import "./Navbar.css"; // 👈 CSS file

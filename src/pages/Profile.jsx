@@ -16,13 +16,3 @@ export default function Profile() {
     </div>
   );
 }
-
-
-// export default function Profile() {
-//    return (
-//       <div style={{ padding: 20 }}>
-//          <h2>Profile</h2>
-//          <p>Profile details will be shown here.</p>
-//       </div>
-//    );
-// }
