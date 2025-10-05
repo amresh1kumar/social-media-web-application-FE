@@ -1,6 +1,6 @@
 # Frontend Development Progress
 
-This document summarizes the daily frontend development tasks for the **MERN Social Media Project** from **22/09/2025** to **05/10/2025**.
+This document summarizes the daily frontend development tasks for the **MERN Social Media Project** from **22/09/2025** to **Till now**.
 
 ---
 
