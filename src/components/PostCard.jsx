@@ -8,11 +8,7 @@ export default function PostCard({ post, onLike }) {
       <div className="post-card">
          {/* Post Header */}
          <div className="post-header">
-            {/* <img
-               className="post-avatar"
-               src="/default-avatar.png"
-               alt="profile"
-            /> */}
+            
             <span className="post-username">{post.author?.username || "User"}</span>
          </div>
 

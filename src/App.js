@@ -15,7 +15,7 @@ function PrivateRoute({ children }) {
 }
 
 export default function App() {
-  
+
   return (
     <AuthProvider>
       <Router>
@@ -34,33 +34,32 @@ export default function App() {
           <Route
             path="/chat"
             element={
-              <PrivateRoute>
                 <Chat />
-              </PrivateRoute>
+              // </PrivateRoute/>
             }
           />
           <Route
             path="/profile"
             element={
-              <PrivateRoute>
+              // <PrivateRoute>
                 <Profile />
-              </PrivateRoute>
+              // </PrivateRoute>
             }
           />
           <Route
             path="/profileSection"
             element={
-              <PrivateRoute>
-                <ProfileSection/>
-              </PrivateRoute>
+              // <PrivateRoute>
+                <ProfileSection />
+              // </PrivateRoute>
             }
           />
           <Route
             path="/notification"
             element={
-              <PrivateRoute>
-                <Notifications/>
-              </PrivateRoute>
+              // <PrivateRoute>
+                <Notifications />
+              // </PrivateRoute>
             }
           />
           <Route path="/" element={<Navigate to="/feed" replace />} />

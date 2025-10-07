@@ -118,7 +118,7 @@ if you get problem from backend side then just comment the code in app.js that i
             }
           />
           
-from every from then you can see the GUI of every components
+from every place then you can see the GUI of every components
 
 #this is last step from down
 

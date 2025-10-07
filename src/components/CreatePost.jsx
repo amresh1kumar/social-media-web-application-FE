@@ -2,10 +2,10 @@ import { useState } from "react";
 import API from "../API/api";
 import { Modal, Button, Upload, Input } from "antd";
 import { UploadOutlined } from "@ant-design/icons";
-import { useAuth } from "../Context/AuthContext";  // 👈 import context
+import { useAuth } from "../Context/AuthContext";  //import context
 
 export default function CreatePost({ onCreated }) {
-   const { user } = useAuth();   // 👈 get current logged-in user
+   const { user } = useAuth();   //get current logged-in user
    const [text, setText] = useState("");
    const [file, setFile] = useState(null);
    const [open, setOpen] = useState(false);

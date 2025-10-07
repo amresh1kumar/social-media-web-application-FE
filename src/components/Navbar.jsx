@@ -1,13 +1,13 @@
 import { Link } from "react-router-dom";
 import { useAuth } from "../Context/AuthContext";
-import "./Navbar.css"; // 👈 CSS file
+import "./Navbar.css";
 
 export default function Navbar() {
    const { user, logout } = useAuth();
 
    return (
       <header className="navbar">
-         <div className="logo">ZX.in</div>
+         <div className="logo">Nextora</div>
          <ul className="nav-links">
             <li>
                <Link to="/feed" className="nav-item">Feed</Link>
