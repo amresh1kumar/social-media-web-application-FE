@@ -1,5 +1,5 @@
 import "./ProfileSection.css";
-import Profileimag from "./image.png";
+import Profileimag from "./image1.png";
 import { useEffect, useState } from "react";
 import API from "../API/api";
 import PostCard from "../components/PostCard";

@@ -1,5 +1,4 @@
-/* Background */
-.register-page {
+/* .register-page {
    height: 100vh;
    display: flex;
    justify-content: center;
@@ -8,7 +7,6 @@
    font-family: Arial, sans-serif;
 }
 
-/* Card */
 .register-container {
    background: white;
    padding: 40px 30px;
@@ -18,14 +16,12 @@
    text-align: center;
 }
 
-/* Title */
 .register-title {
    margin-bottom: 20px;
    font-size: 26px;
    color: #333;
 }
 
-/* Input groups */
 .input-group {
    position: relative;
    margin-bottom: 20px;
@@ -48,7 +44,6 @@
    font-size: 16px;
 }
 
-/* Button */
 .register-btn {
    width: 100%;
    padding: 12px;
@@ -65,8 +60,68 @@
    opacity: 0.9;
 }
 
-/* Login link */
 .login-text {
    margin-top: 15px;
    font-size: 14px;
+} */
+
+
+.register-form {
+   background: linear-gradient(180deg, #6a11cb 0%, #2575fc 100%);
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   min-height: 100vh;
+   background-image: url(./bg.png);
+
+}
+
+.all-items-register {
+   border: 1px dotted gray;
+   padding: 30px;
+   width: 100%;
+   max-width: 500px;
+   background-color: #fff;
+   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+   border-radius: 10px;
+}
+
+.input-field-register {
+   padding: 10px !important;
+}
+
+.register-btn-full {
+   padding: 20px !important;
+   width: 100%;
+   font-size: 1rem;
+   font-weight: 500;
+}
+
+.signup-link-register {
+   text-align: center;
+   margin-top: 20px;
+}
+
+@media (max-width: 768px) {
+   .all-items {
+      padding: 20px;
+      margin: 0 15px;
+      box-shadow: none;
+      border: none;
+   }
+
+   .input-field {
+      padding: 8px;
+      font-size: 0.9rem;
+   }
+
+   .login-btn-full {
+      padding: 14px;
+      font-size: 0.95rem;
+   }
+
+   .signup-link {
+      font-size: 0.9rem;
+      margin-top: 15px;
+   }
 }

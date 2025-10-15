@@ -8,11 +8,24 @@
 }
 
 /* Header */
-.post-header {
+/* .post-header {
    display: flex;
    align-items: center;
    gap: 10px;
    padding: 10px 14px;
+} */
+
+.post-header {
+   display: flex;
+   align-items: center;
+   gap: 10px;
+}
+
+.post-profile-pic {
+   width: 40px;
+   height: 40px;
+   border-radius: 50%;
+   object-fit: cover;
 }
 
 .post-avatar {

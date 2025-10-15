@@ -26,41 +26,41 @@ export default function App() {
           <Route
             path="/feed"
             element={
-              // <PrivateRoute>
+              <PrivateRoute>
                 <Feed />
-              // </PrivateRoute>
+              </PrivateRoute>
             }
           />
           <Route
             path="/chat"
             element={
-              // <PrivateRoute>
+              <PrivateRoute>
                 <Chat />
-              // </PrivateRoute/>
+              </PrivateRoute>
             }
           />
           <Route
             path="/profile"
             element={
-              // <PrivateRoute>
+              <PrivateRoute>
                 <Profile />
-              // </PrivateRoute>
+              </PrivateRoute>
             }
           />
           <Route
             path="/profileSection"
             element={
-              // <PrivateRoute>
+              <PrivateRoute>
                 <ProfileSection />
-              // </PrivateRoute>
+              </PrivateRoute>
             }
           />
           <Route
             path="/notification"
             element={
-              // <PrivateRoute>
+              <PrivateRoute>
                 <Notifications />
-              // </PrivateRoute>
+              </PrivateRoute>
             }
           />
           <Route path="/" element={<Navigate to="/feed" replace />} />
