@@ -30,6 +30,7 @@ export default function PostSection() {
 
    // Header me basic info (simple fallback)
    const displayName = user?.username || user?.name || "My Profile";
+   const displayEmail = user?.email || user?.name || "My Profile";
    const avatarUrl = user?.avatar || user?.photoURL || "/default-avatar.png";
    const bio = user?.bio || "";
 
@@ -37,14 +38,13 @@ export default function PostSection() {
       <div className="profile-page">
          {/* Profile-style Header */}
          <div className="profile-header">
-            <img src={Profileimag} alt="avatar" className="profile-avatar" />
+            {/* <img src={Profileimag} alt="avatar" className="profile-avatar" /> */}
             <div className="profile-info">
-               <h2>{displayName}</h2>
+               <h2>Username : {displayName}</h2>
+               <p> Email : {displayEmail}</p>
                {bio && <p>{bio}</p>}
                <div className="profile-stats">
                   <span><b>{posts.length}</b> posts</span>
-                  {/* <span><b>{user?.followers?.length || 0}</b> followers</span> */}
-                  {/* <span><b>{user?.following?.length || 0}</b> following</span> */}
                </div>
             </div>
          </div>
