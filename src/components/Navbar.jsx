@@ -68,8 +68,7 @@ export default function Navbar() {
                <ul className={`nav-links ${openMenu ? "active" : ""}`}>
                   <li><Link to="/feed" className="nav-item">Feed</Link></li>
                   <li><Link to="/chat" className="nav-item">Chat</Link></li>
-                  <li><Link to="/profile" className="nav-item">Profile</Link></li>
-                  <li><Link to="/profileSection" className="nav-item">Profile Details</Link></li>
+                  <li><Link to="/profileSection" className="nav-item">Profile</Link></li>
                   <li><Link to="/notification" className="nav-item">Notifications</Link></li>
                   <li className="auth-section">
                      <span className="username">{user.username}</span>

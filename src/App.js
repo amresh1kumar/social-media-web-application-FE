@@ -40,14 +40,6 @@ export default function App() {
             }
           />
           <Route
-            path="/profile"
-            element={
-              <PrivateRoute>
-                <Profile />
-              </PrivateRoute>
-            }
-          />
-          <Route
             path="/profileSection"
             element={
               <PrivateRoute>

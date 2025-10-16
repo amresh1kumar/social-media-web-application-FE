@@ -10,6 +10,9 @@ export default function PostSection() {
    const [posts, setPosts] = useState([]);
    const { user } = useAuth();
 
+   // username ka first letter (capital)
+   const firstLetter = user?.username ? user.username[0].toUpperCase() : "";
+
    useEffect(() => {
       if (user?._id) {
          fetchUserPosts();
@@ -31,18 +34,41 @@ export default function PostSection() {
    // Header me basic info (simple fallback)
    const displayName = user?.username || user?.name || "My Profile";
    const displayEmail = user?.email || user?.name || "My Profile";
-   const avatarUrl = user?.avatar || user?.photoURL || "/default-avatar.png";
-   const bio = user?.bio || "";
 
    return (
       <div className="profile-page">
          {/* Profile-style Header */}
          <div className="profile-header">
-            {/* <img src={Profileimag} alt="avatar" className="profile-avatar" /> */}
+            {user.avatar ? (
+               // agar avatar hai
+               <img
+                  src={`http://localhost:5000${user.avatar}`}
+                  alt="avatar"
+                  width={100}
+                  style={{ borderRadius: "50%", marginBottom: 10 }}
+               />
+            ) : (
+               // default avatar me first letter show karenge
+               <div
+                  style={{
+                     width: 100,
+                     height: 100,
+                     borderRadius: "50%",
+                     backgroundColor: "#4caf50", // green circle
+                     display: "flex",
+                     alignItems: "center",
+                     justifyContent: "center",
+                     fontSize: 40,
+                     color: "white",
+                     marginBottom: 10,
+                  }}
+               >
+                  {firstLetter}
+               </div>
+            )}
             <div className="profile-info">
                <h2>Username : {displayName}</h2>
                <p> Email : {displayEmail}</p>
-               {bio && <p>{bio}</p>}
                <div className="profile-stats">
                   <span><b>{posts.length}</b> posts</span>
                </div>
