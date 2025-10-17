@@ -5,6 +5,7 @@ import API from "../API/api";
 import PostCard from "../components/PostCard";
 import { useAuth } from "../Context/AuthContext";
 import "./ProfileSection.css"; // yeh add karna
+import DeleteAccount from "./DeleteAccount";
 
 export default function PostSection() {
    const [posts, setPosts] = useState([]);
@@ -72,6 +73,7 @@ export default function PostSection() {
                <div className="profile-stats">
                   <span><b>{posts.length}</b> posts</span>
                </div>
+               <DeleteAccount/>
             </div>
          </div>
 
