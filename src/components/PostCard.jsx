@@ -1,7 +1,14 @@
-import React from "react";
+import React, { useState } from "react";
+import axios from "axios";
+import {Tooltip} from 'antd';
 import "./PostCard.css";
+import { useAuth } from "../Context/AuthContext";
 
 export default function PostCard({ post, onLike }) {
+   const { user } = useAuth();
+   const [commentText, setCommentText] = useState("");
+   const [comments, setComments] = useState(post.comments || []);
+
    const API_URL =
       process.env.REACT_APP_API_URL?.replace("/api", "") || "http://localhost:5000";
 
@@ -51,6 +58,31 @@ export default function PostCard({ post, onLike }) {
       );
    };
 
+   // ✅ Handle Add Comment
+   const handleAddComment = async () => {
+      if (!commentText.trim()) return;
+
+      try {
+         const token = localStorage.getItem("token");
+         const res = await axios.post(
+            `${process.env.REACT_APP_API_URL}/posts/${post._id}/comment`,
+            { text: commentText },
+            {
+               headers: {
+                  Authorization: `Bearer ${token}`,
+               },
+            }
+         );
+
+         // backend returns updated post with populated comments
+         setComments(res.data.comments);
+         setCommentText("");
+      } catch (err) {
+         console.error("Error adding comment:", err);
+         alert("Failed to add comment");
+      }
+   };
+
    return (
       <div className="post-card">
          {/* Header: Avatar + Username */}
@@ -80,7 +112,6 @@ export default function PostCard({ post, onLike }) {
                ❤
             </button>
             <button className="icon-btn">💬</button>
-            <button className="icon-btn">📤</button>
          </div>
 
          {/* Likes */}
@@ -94,11 +125,33 @@ export default function PostCard({ post, onLike }) {
             {post.content}
          </div>
 
+         {/* Comments List */}
+
+         <Tooltip title="scroll to show all comment" >
+            <div className="post-comments">
+               {comments.length > 0 ? (
+                  comments.map((c, i) => (
+                     <div key={i} className="comment">
+                        <strong>{c.user?.username || "User"}:</strong> {c.text}
+                     </div>
+                  ))
+               ) : (
+                  <div className="no-comments">No comments yet</div>
+               )}
+            </div>
+         </Tooltip>
+
+
          {/* Add comment */}
          <div className="post-add-comment">
-            <input placeholder="Add a comment..." />
+            <input
+               placeholder="Add a comment..."
+               value={commentText}
+               onChange={(e) => setCommentText(e.target.value)}
+               onKeyDown={(e) => e.key === "Enter" && handleAddComment()}
+            />
+            <button onClick={handleAddComment}>Post</button>
          </div>
       </div>
    );
 }
-
