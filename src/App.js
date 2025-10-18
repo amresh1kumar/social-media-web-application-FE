@@ -15,7 +15,7 @@ function PrivateRoute({ children }) {
 }
 
 export default function App() {
-  
+
   return (
     <AuthProvider>
       <Router>
@@ -40,18 +40,10 @@ export default function App() {
             }
           />
           <Route
-            path="/profile"
-            element={
-              <PrivateRoute>
-                <Profile />
-              </PrivateRoute>
-            }
-          />
-          <Route
             path="/profileSection"
             element={
               <PrivateRoute>
-                <ProfileSection/>
+                <ProfileSection />
               </PrivateRoute>
             }
           />
@@ -59,7 +51,7 @@ export default function App() {
             path="/notification"
             element={
               <PrivateRoute>
-                <Notifications/>
+                <Notifications />
               </PrivateRoute>
             }
           />

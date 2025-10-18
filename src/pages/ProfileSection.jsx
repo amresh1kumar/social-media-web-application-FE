@@ -1,14 +1,18 @@
 import "./ProfileSection.css";
-import Profileimag from "./image.png";
+import Profileimag from "./image1.png";
 import { useEffect, useState } from "react";
 import API from "../API/api";
 import PostCard from "../components/PostCard";
 import { useAuth } from "../Context/AuthContext";
 import "./ProfileSection.css"; // yeh add karna
+import DeleteAccount from "./DeleteAccount";
 
 export default function PostSection() {
    const [posts, setPosts] = useState([]);
    const { user } = useAuth();
+
+   // username ka first letter (capital)
+   const firstLetter = user?.username ? user.username[0].toUpperCase() : "";
 
    useEffect(() => {
       if (user?._id) {
@@ -30,22 +34,46 @@ export default function PostSection() {
 
    // Header me basic info (simple fallback)
    const displayName = user?.username || user?.name || "My Profile";
-   const avatarUrl = user?.avatar || user?.photoURL || "/default-avatar.png";
-   const bio = user?.bio || "";
+   const displayEmail = user?.email || user?.name || "My Profile";
 
    return (
       <div className="profile-page">
          {/* Profile-style Header */}
          <div className="profile-header">
-            <img src={Profileimag} alt="avatar" className="profile-avatar" />
+            {user.avatar ? (
+               // agar avatar hai
+               <img
+                  src={`http://localhost:5000${user.avatar}`}
+                  alt="avatar"
+                  width={100}
+                  style={{ borderRadius: "50%", marginBottom: 10 }}
+               />
+            ) : (
+               // default avatar me first letter show karenge
+               <div
+                  style={{
+                     width: 100,
+                     height: 100,
+                     borderRadius: "50%",
+                     backgroundColor: "#4caf50", // green circle
+                     display: "flex",
+                     alignItems: "center",
+                     justifyContent: "center",
+                     fontSize: 40,
+                     color: "white",
+                     marginBottom: 10,
+                  }}
+               >
+                  {firstLetter}
+               </div>
+            )}
             <div className="profile-info">
-               <h2>{displayName}</h2>
-               {bio && <p>{bio}</p>}
+               <h2>Username : {displayName}</h2>
+               <p> Email : {displayEmail}</p>
                <div className="profile-stats">
                   <span><b>{posts.length}</b> posts</span>
-                  {/* <span><b>{user?.followers?.length || 0}</b> followers</span> */}
-                  {/* <span><b>{user?.following?.length || 0}</b> following</span> */}
                </div>
+               <DeleteAccount/>
             </div>
          </div>
 

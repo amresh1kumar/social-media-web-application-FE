@@ -104,13 +104,13 @@ export default function Feed() {
             }
          >
             {posts
-               .filter((p) => p.user !== null && p._id) // ✅ skip posts without user or _id
+               .filter((p) => p.user !== null && p._id) //skip posts without user or _id
                .map((p) => (
                      
                   <div style={{border:'4px solid red' }}  >
 
                   <PostCard
-                     key={p._id} // ✅ always unique key
+                     key={p._id}
                      post={p}
                      onLike={onLike}
                   />

@@ -9,6 +9,7 @@
 .profile-header {
    display: flex;
    align-items: center;
+   /* justify-content: center; */
    gap: 30px;
    padding-bottom: 20px;
    border-bottom: 1px solid #ddd;

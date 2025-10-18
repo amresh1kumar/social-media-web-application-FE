@@ -1,4 +1,4 @@
-/* Background */
+/* 
 .login-page {
   height: 100vh;
   display: flex;
@@ -8,7 +8,7 @@
   font-family: Arial, sans-serif;
 }
 
-/* Card */
+
 .login-container {
   background: white;
   padding: 40px 30px;
@@ -18,14 +18,14 @@
   text-align: center;
 }
 
-/* Title */
+
 .login-title {
   margin-bottom: 20px;
   font-size: 26px;
   color: #333;
 }
 
-/* Input groups */
+
 .input-group {
   position: relative;
   margin-bottom: 20px;
@@ -48,7 +48,7 @@
   font-size: 16px;
 }
 
-/* Options */
+
 .options {
   display: flex;
   justify-content: space-between;
@@ -71,7 +71,6 @@
   text-decoration: underline;
 }
 
-/* Button */
 .login-btn {
   width: 100%;
   padding: 12px;
@@ -88,8 +87,65 @@
   opacity: 0.9;
 }
 
-/* Register text */
 .register-text {
   margin-top: 15px;
   font-size: 14px;
+} */
+
+
+/* Center the form */
+.login-form {
+  background: linear-gradient(180deg, #6a11cb 0%, #2575fc 100%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-image: url(./bg.png);
+}
+
+/* Card container */
+.all-items {
+  border: 1px dotted gray;
+  padding: 30px;
+  width: 100%;
+  max-width: 500px;
+  background-color: #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+}
+
+
+/* Input fields */
+.input-field {
+  padding: 10px !important;
+  color: #000;
+
+}
+
+/* Remember me & forgot password */
+.rem-forgot-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Button */
+.login-btn-full {
+  padding: 20px !important;
+  width: 100%;
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+/* Register link */
+.signup-link {
+  text-align: center;
+  margin-top: 20px;
+}
+
+@media (max-width: 768px) {
+  .all-items {
+    margin: 0 20px;
+    padding: 20px;
+  }
 }

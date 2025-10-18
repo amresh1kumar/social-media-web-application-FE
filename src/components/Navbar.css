@@ -3,8 +3,7 @@
    display: flex;
    align-items: center;
    justify-content: space-between;
-   background: #222;
-   /* dark background */
+   background: url(../pages/bg.png);
    padding: 0 20px;
    height: 60px;
    font-family: Arial, sans-serif;
@@ -18,7 +17,6 @@
    font-size: 20px;
    font-weight: bold;
    background: #ffd500;
-   /* yellow box */
    color: #000;
    padding: 8px 15px;
    border-radius: 4px;
@@ -42,21 +40,15 @@
    transition: 0.3s;
    position: relative;
    top: 5px;
-   /* border: 1px solid red; */
-}
-
-.nav-item-log-out {
-   color: #fff;
-   text-decoration: none;
-   padding: 6px 12px;
-   border-radius: 20px;
-   transition: 0.3s;
-
 }
 
 .nav-item-log-out {
    background: #ffd500;
    color: #000;
+   text-decoration: none;
+   padding: 6px 12px;
+   border-radius: 20px;
+   transition: 0.3s;
 }
 
 .nav-item:hover {
@@ -87,4 +79,49 @@
 
 .logout-btn:hover {
    background: #ffcc00;
+}
+
+/* Hamburger button */
+.hamburger {
+   display: none;
+   flex-direction: column;
+   cursor: pointer;
+   gap: 4px;
+}
+
+.hamburger div {
+   width: 25px;
+   height: 3px;
+   background: #fff;
+   border-radius: 2px;
+}
+
+/* Mobile responsive */
+@media (max-width: 768px) {
+   .nav-links {
+      position: fixed;
+      top: 60px;
+      right: -100%;
+      width: 200px;
+      height: calc(100vh - 60px);
+      flex-direction: column;
+      background: #1a1a1a;
+      gap: 20px;
+      padding: 20px;
+      transition: 0.3s;
+      z-index: 999;
+   }
+
+   .nav-links.active {
+      right: 0;
+   }
+
+   .hamburger {
+      display: flex;
+   }
+
+   .auth-section {
+      flex-direction: column;
+      gap: 10px;
+   }
 }
