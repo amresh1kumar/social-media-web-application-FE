@@ -3,6 +3,8 @@ import API from "../API/api";
 import useSocket from "../hooks/useSocket";
 import { useAuth } from "../Context/AuthContext";
 import { IoSearchSharp } from "react-icons/io5";
+import { Tooltip } from "antd";
+
 
 import "./Chat.css";
 
@@ -130,30 +132,27 @@ export default function Chat() {
                   onChange={(e) => setSearch(e.target.value)}
                   placeholder="Search user..."
                   style={{
-                     width: "98%",
+                     width: "96%",
                      borderRadius: "6px",
                      border: "1px solid #ddd",
                      outline: "none",
                   }}
                />
-               <IoSearchSharp
-                  style={{
-                     position: "absolute",
-                     right: "8px",
-                     top: "50%",
-                     transform: "translateY(-50%)",
-                     color: "#888",
-                     cursor: "pointer",
-                     fontSize: "18px",
-                  }}
-                  onClick={searchForUser} // optional click
-               />
+               <Tooltip title="Search User">
+                  <IoSearchSharp
+                     style={{
+                        position: "absolute",
+                        right: "10px",
+                        top: "50%",
+                        transform: "translateY(-50%)",
+                        color: "#888",
+                        cursor: "pointer",
+                        fontSize: "20px",
+                     }}
+                     onClick={searchForUser} // optional click
+                  />
+               </Tooltip>
             </div>
-
-            <button onClick={searchForUser} className="sidebar-search-btn">
-               Search User
-            </button>
-
             {results.length > 0 && (
                <div className="sidebar-results">
                   <p style={{ marginBottom: "5px", color: "yellowgreen" }}>
@@ -178,6 +177,8 @@ export default function Chat() {
             <h3 className="sidebar-title">Chat List</h3>
             <div className="sidebar-convs">
                {convs.map((c) => (
+               <Tooltip title="Click here and start chat.">
+
                   <div
                      key={c._id}
                      className={`sidebar-conv ${selected?._id === c._id ? "active" : ""}`}
@@ -185,6 +186,7 @@ export default function Chat() {
                   >
                      {c.participants?.filter((p) => p._id !== user._id)[0]?.username || "User"}
                   </div>
+               </Tooltip>
                ))}
             </div>
          </div>
