@@ -47,10 +47,10 @@ export default function CreatePost({ onCreated }) {
                display: "flex",
                justifyContent: "center",
                alignItems: "center",
-               lineHeight: "0",        // ✅ important for exact vertical centering
+               lineHeight: "0",   
                boxShadow: "0 4px 12px rgba(0,0,0,0.15)",
                cursor: "pointer",
-               padding: 0,             // ✅ remove default padding
+               padding: 0,          
                paddingBottom: '8px'
             }}
             onClick={() => setOpen(true)}
@@ -64,13 +64,13 @@ export default function CreatePost({ onCreated }) {
             onCancel={() => setOpen(false)}
             okText="Post"
             cancelText="Cancel"
-            getContainer={false} // ✅ modal ko body ke andar render kar de
-            mask={false}          // optional: background mask ko hata de
+            getContainer={false}
+            mask={false}  
          >
-            {/* Username from context */}
+         
             <p><b>{user?.username || "Guest"}</b></p>
 
-            {/* Caption input */}
+      
             <Input.TextArea
                rows={3}
                placeholder="Write a caption..."

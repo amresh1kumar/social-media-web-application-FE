@@ -6,12 +6,10 @@ export default function Notifications() {
    const socketRef = useSocket();
    const [notifs, setNotifs] = useState([]);
 
-   // Fetch notifications safely
    useEffect(() => {
       const fetchNotifs = async () => {
          try {
             const res = await API.get("/notifications");
-            // Ensure array
             const data = Array.isArray(res.data) ? res.data : res.data.notifications || [];
             setNotifs(data);
          } catch (err) {
@@ -21,7 +19,6 @@ export default function Notifications() {
       fetchNotifs();
    }, []);
 
-   // Socket listener
    useEffect(() => {
       const s = socketRef.current;
       if (!s) return;

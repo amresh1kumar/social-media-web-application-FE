@@ -12,7 +12,6 @@ export default function PostCard({ post, onLike }) {
    const API_URL =
       process.env.REACT_APP_API_URL?.replace("/api", "") || "http://localhost:5000";
 
-   // ✅ Function to get avatar or default letter
    const getProfileAvatar = (author, size = 40) => {
       const firstLetter = author?.username?.[0]?.toUpperCase() || "U";
 
@@ -58,7 +57,6 @@ export default function PostCard({ post, onLike }) {
       );
    };
 
-   // ✅ Handle Add Comment
    const handleAddComment = async () => {
       if (!commentText.trim()) return;
 
@@ -111,13 +109,10 @@ export default function PostCard({ post, onLike }) {
             <button className="icon-btn" onClick={() => onLike(post._id)}>
                ❤
             </button>
-            <button className="icon-btn">💬</button>
          </div>
 
-         {/* Likes */}
          <div className="post-likes">{post.likes?.length || 0} likes</div>
 
-         {/* Caption */}
          <div className="post-caption">
             <span className="post-caption-username">
                {post.author?.username || "User"}
@@ -125,7 +120,6 @@ export default function PostCard({ post, onLike }) {
             {post.content}
          </div>
 
-         {/* Comments List */}
 
          <Tooltip title="scroll to show all comment" >
             <div className="post-comments">
@@ -142,7 +136,6 @@ export default function PostCard({ post, onLike }) {
          </Tooltip>
 
 
-         {/* Add comment */}
          <div className="post-add-comment">
             <input
                placeholder="Add a comment..."
