@@ -9,7 +9,6 @@
 .profile-header {
    display: flex;
    align-items: center;
-   /* justify-content: center; */
    gap: 30px;
    padding-bottom: 20px;
    border-bottom: 1px solid #ddd;
@@ -37,7 +36,6 @@
    font-size: 14px;
 }
 
-/* Posts Grid */
 .profile-posts {
    display: grid;
    grid-template-columns: repeat(3, 1fr);
@@ -46,7 +44,6 @@
 }
 
 .post-item {
-   /* PostCard ko grid cell me wrap karne ke liye */
    width: 100%;
 }
 

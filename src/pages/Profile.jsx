@@ -1,28 +1,3 @@
-// import { useAuth } from "../Context/AuthContext";
-
-// export default function Profile() {
-//   const { user } = useAuth();
-
-//   return (
-//     <div style={{ padding: 20 }}>
-//       <h2>Profile</h2>
-//       {user ? (
-//         <>
-//           <img
-//             src={user.avatar ? `http://localhost:5000${user.avatar}` : "/default.png"}
-//             alt="avatar"
-//             width={100}
-//             style={{ borderRadius: "50%", marginBottom: 10 }}
-//           />
-//           <p>Username: {user.username}</p>
-//           <p>Email: {user.email}</p>
-//         </>
-//       ) : (
-//         <p>No profile loaded</p>
-//       )}
-//     </div>
-//   );
-// }
 
 
 import { useAuth } from "../Context/AuthContext";
@@ -30,7 +5,6 @@ import { useAuth } from "../Context/AuthContext";
 export default function Profile() {
   const { user } = useAuth();
 
-  // username ka first letter (capital)
   const firstLetter = user?.username ? user.username[0].toUpperCase() : "";
 
   return (
