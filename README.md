@@ -84,6 +84,11 @@ This document summarizes the daily frontend development tasks for the **MERN Soc
 - Fixed minor styling issues and component alignment.
 - Prepared frontend for deployment and final testing.
 
+  ## Day 15 – til now
+
+- Update Design 
+
+
 ---
 
 
